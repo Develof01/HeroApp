@@ -1,20 +1,27 @@
+import dependencies.Dependencies
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
+
+    def buildCustomType = ""
+
     namespace 'com.mx.android.herocompose'
-    compileSdk 32
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.mx.android.herocompose"
         minSdk 21
-        targetSdk 32
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
         }
@@ -22,42 +29,86 @@ android {
 
     buildTypes {
         release {
+            buildCustomType = "release"
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+        dev {
+            buildCustomType = "dev"
+        }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
     buildFeatures {
         compose true
     }
+
     composeOptions {
         kotlinCompilerExtensionVersion '1.1.1'
     }
-    packagingOptions {
-        resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+
+    applicationVariants.all { variant ->
+        def outputName = "hero_app_${buildCustomType}_${defaultConfig.versionName}.apk"
+        variant.outputs.all { output ->
+            outputFileName = outputName
         }
     }
 }
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.3.1'
-    implementation "androidx.compose.ui:ui:$compose_ui_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_ui_version"
-    implementation 'androidx.compose.material:material:1.1.1'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.4'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_ui_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_ui_version"
+    def composeBom = platform(Dependencies.JetPack.Compose.bom)
+
+    // Kotlin
+    implementation Dependencies.Kotlin.Androidx.core
+    implementation Dependencies.Kotlin.Coroutines.core
+    implementation Dependencies.Kotlin.Coroutines.android
+
+    //Compose Library
+    implementation composeBom
+    implementation Dependencies.JetPack.Compose.compose_activity
+    implementation Dependencies.JetPack.Compose.material
+    implementation Dependencies.JetPack.Compose.material_icons
+    implementation Dependencies.JetPack.Compose.constraint
+    implementation Dependencies.JetPack.Compose.lifecycle
+    implementation Dependencies.JetPack.Compose.preview
+    debugImplementation Dependencies.JetPack.Compose.preview_debug
+
+    //Lifecycle
+    implementation Dependencies.JetPack.LifeCycle.lifecycle_vm
+    implementation Dependencies.JetPack.LifeCycle.lifecycle_livedata
+
+    //Paging
+    implementation Dependencies.JetPack.Paging.paging_compose
+
+    //UI
+    implementation Dependencies.JetPack.UI.appcompat
+
+    //Room
+    implementation(Dependencies.JetPack.Room.room_runtime)
+    annotationProcessor(Dependencies.JetPack.Room.room_compiler)
+    kapt(Dependencies.JetPack.Room.room_compiler)
+
+    //Navigation
+    implementation Dependencies.JetPack.Navigation.fragment_ktx
+    implementation Dependencies.JetPack.Navigation.ui_ktx
+
+    //Hilt
+    implementation Dependencies.JetPack.Hilt.hilt
+    annotationProcessor Dependencies.JetPack.Hilt.hilt_compiler
+
+    //Retrofit
+    implementation Dependencies.ExternalLibs.Retrofit.core
+    implementation Dependencies.ExternalLibs.Retrofit.converter
+
+    //Lottie
+    implementation Dependencies.ExternalLibs.Lottie.core
 }
