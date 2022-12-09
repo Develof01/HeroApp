@@ -3,6 +3,8 @@ import dependencies.Dependencies
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -37,10 +39,26 @@ android {
 
 dependencies {
 
+    implementation(project(":core:common"))
+
     // Kotlin
     implementation(Dependencies.Kotlin.Androidx.core)
+
+    //Hilt
+    implementation(Dependencies.JetPack.Hilt.hilt)
+    kapt(Dependencies.JetPack.Hilt.hilt_compiler)
+
+    //Room
+    implementation(Dependencies.JetPack.Room.room_runtime)
+    annotationProcessor(Dependencies.JetPack.Room.room_compiler)
+    kapt(Dependencies.JetPack.Room.room_compiler)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")
+}
+
+// Allow references to generated code
+kapt {
+    correctErrorTypes = true
 }

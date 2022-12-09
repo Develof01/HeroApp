@@ -99,11 +99,6 @@ dependencies {
     //UI
     implementation Dependencies.JetPack.UI.appcompat
 
-    //Room
-    implementation(Dependencies.JetPack.Room.room_runtime)
-    annotationProcessor(Dependencies.JetPack.Room.room_compiler)
-    kapt(Dependencies.JetPack.Room.room_compiler)
-
     //Navigation
     implementation Dependencies.JetPack.Navigation.fragment_ktx
     implementation Dependencies.JetPack.Navigation.ui_ktx
@@ -111,7 +106,6 @@ dependencies {
     //Hilt
     implementation Dependencies.JetPack.Hilt.hilt
     kapt Dependencies.JetPack.Hilt.hilt_compiler
-    annotationProcessor 'androidx.hilt:hilt-compiler:1.0.0'
 
     //Retrofit
     implementation Dependencies.ExternalLibs.Retrofit.core
