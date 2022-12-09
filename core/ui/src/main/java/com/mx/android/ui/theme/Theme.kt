@@ -1,4 +1,4 @@
-package com.mx.android.herocompose.ui.theme
+package com.mx.android.ui.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme

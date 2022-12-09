@@ -1,6 +1,7 @@
-package com.mx.android.herocompose.ui.theme
+package com.mx.android.ui.theme
 
 import androidx.compose.ui.graphics.Color
+
 
 val Purple200 = Color(0xFFBB86FC)
 val Purple500 = Color(0xFF6200EE)

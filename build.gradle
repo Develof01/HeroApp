@@ -1,11 +1,27 @@
-buildscript {
-    ext {
-        compose_ui_version = '1.1.1'
-    }
-}// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {
     id 'com.android.application' version '7.3.1' apply false
     id 'com.android.library' version '7.3.1' apply false
-    id 'org.jetbrains.kotlin.android' version '1.6.10' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
     id 'com.google.dagger.hilt.android' version '2.44' apply false
+    id 'org.jetbrains.kotlin.jvm' version '1.7.20' apply false
+    id "com.github.ben-manes.versions" version '0.44.0'
+}
+
+allprojects {
+    apply plugin: com.github.benmanes.gradle.versions.VersionsPlugin
+
+    def isNonStable = { String version ->
+        def stableKeyword = ['RELEASE', 'FINAL', 'GA'].any {
+            itStable -> version.toUpperCase().contains(itStable)
+        }
+        def regex = /^[0-9,.v-]+(-r)?$/
+        return !stableKeyword && !(version ==~ regex)
+    }
+
+    tasks.named("dependencyUpdates").configure {
+        // configure the task, for example wrt. resolution strategies
+        rejectVersionIf {
+            isNonStable(it.candidate.version) && !isNonStable(it.currentVersion)
+        }
+    }
 }

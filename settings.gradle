@@ -14,3 +14,10 @@ dependencyResolutionManagement {
 }
 rootProject.name = "HeroCompose"
 include ':app'
+include ':core:database'
+include ':features:heros'
+include ':core:ui'
+include ':core:network'
+include ':core:common'
+include ':core:domain'
+include ':core:data'

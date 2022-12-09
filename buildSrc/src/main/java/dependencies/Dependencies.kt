@@ -23,8 +23,8 @@ object Dependencies {
             const val compose_activity = "androidx.activity:activity-compose:${Versions.JetPack.compose_activity}"
             const val lifecycle = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.JetPack.compose_lifecycle}"
             const val constraint = "androidx.constraintlayout:constraintlayout-compose:${Versions.JetPack.constraint_layout}"
-            const val preview = "androidx.compose.ui:ui-tooling-preview:${Versions.JetPack.compose}"
-            const val preview_debug = "androidx.compose.ui:ui-tooling:${Versions.JetPack.compose}"
+            const val preview = "androidx.compose.ui:ui-tooling-preview:${Versions.JetPack.compose_tooling}"
+            const val preview_debug = "androidx.compose.ui:ui-tooling:${Versions.JetPack.compose_tooling}"
         }
 
         object LifeCycle {
@@ -57,11 +57,9 @@ object Dependencies {
     }
 
     object ExternalLibs {
-
         object Retrofit {
             const val core = "com.squareup.retrofit2:retrofit:${Versions.ExternalLibs.retrofit}"
             const val converter = "com.squareup.retrofit2:converter-gson:${Versions.ExternalLibs.retrofit}"
-            //const val adapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.ExternalLibs.retrofit}"
         }
 
         object Lottie {

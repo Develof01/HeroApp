@@ -1,4 +1,4 @@
-package com.mx.android.herocompose.ui.theme
+package com.mx.android.ui.theme
 
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Shapes
