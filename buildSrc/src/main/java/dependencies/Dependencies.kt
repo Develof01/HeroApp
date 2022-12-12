@@ -60,6 +60,8 @@ object Dependencies {
         object Retrofit {
             const val core = "com.squareup.retrofit2:retrofit:${Versions.ExternalLibs.retrofit}"
             const val converter = "com.squareup.retrofit2:converter-gson:${Versions.ExternalLibs.retrofit}"
+            const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.ExternalLibs.interceptor}"
+            const val adapter = "com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:${Versions.ExternalLibs.retrofit_coroutine_adapter}"
         }
 
         object Lottie {

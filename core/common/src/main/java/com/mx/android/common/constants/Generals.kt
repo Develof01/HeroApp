@@ -11,5 +11,6 @@ object Generals {
 
     object NetworkConstants {
         const val TIMEOUT: Long = 10
+        const val TS = 1.toString()
     }
 }

@@ -27,6 +27,8 @@ object Versions {
     object ExternalLibs {
         const val lottie = "5.2.0"
         const val retrofit = "2.9.0"
+        const val interceptor = "4.2.2"
+        const val retrofit_coroutine_adapter = "0.9.2"
     }
 
 }
