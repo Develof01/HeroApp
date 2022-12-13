@@ -4,6 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.mx.android.herocompose">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".HeroApplication"
         android:allowBackup="true"

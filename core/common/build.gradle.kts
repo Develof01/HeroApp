@@ -37,9 +37,15 @@ android {
 
 dependencies {
 
+    implementation(project(":core:domain"))
+
     // Kotlin
     implementation(Dependencies.Kotlin.Androidx.core)
     implementation(Dependencies.Kotlin.Coroutines.core)
+    implementation(Dependencies.Kotlin.Coroutines.android)
+
+    //Retrofit
+    implementation(Dependencies.ExternalLibs.Retrofit.core)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")

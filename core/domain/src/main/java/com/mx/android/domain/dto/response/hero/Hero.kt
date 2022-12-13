@@ -1,4 +1,4 @@
-package com.mx.android.domain.dto.response
+package com.mx.android.domain.dto.response.hero
 
 data class Hero(
     val id: Int,
