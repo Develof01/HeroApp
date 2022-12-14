@@ -36,6 +36,8 @@ android {
 
 dependencies {
 
+    implementation(project(":core:common"))
+
     // Kotlin
     implementation Dependencies.Kotlin.Androidx.core
     implementation Dependencies.Kotlin.Coroutines.core

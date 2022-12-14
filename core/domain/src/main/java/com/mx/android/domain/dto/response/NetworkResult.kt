@@ -16,10 +16,4 @@ sealed class NetworkResult <out T> (
         data = null,
         error = NetworkError(code, exception)
     )
-
-    data class Loading(val isLoading: Boolean): NetworkResult<Nothing>(
-        status = ApiStatus.LOADING,
-        data = null,
-        error = null
-    )
 }

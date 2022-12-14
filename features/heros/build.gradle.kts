@@ -74,6 +74,12 @@ dependencies {
     implementation(Dependencies.JetPack.LifeCycle.lifecycle_vm)
     implementation(Dependencies.JetPack.LifeCycle.lifecycle_livedata)
 
+
+    //Retrofit
+    implementation(Dependencies.ExternalLibs.Retrofit.core)
+    implementation(Dependencies.ExternalLibs.Retrofit.converter)
+    implementation(Dependencies.ExternalLibs.Retrofit.adapter)
+
     //Paging
     implementation(Dependencies.JetPack.Paging.paging_compose)
 

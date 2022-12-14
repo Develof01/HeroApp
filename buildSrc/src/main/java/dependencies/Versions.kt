@@ -19,7 +19,7 @@ object Versions {
         const val room = "2.4.3"
         const val nav = "2.5.3"
         const val constraint_layout = "1.0.1"
-        const val hilt = "2.44"
+        const val hilt = "2.44.2"
         const val lifecycle = "2.5.1"
         const val paging = "1.0.0-alpha17"
     }
@@ -27,7 +27,7 @@ object Versions {
     object ExternalLibs {
         const val lottie = "5.2.0"
         const val retrofit = "2.9.0"
-        const val interceptor = "4.2.2"
+        const val interceptor = "4.10.0"
         const val retrofit_coroutine_adapter = "0.9.2"
     }
 

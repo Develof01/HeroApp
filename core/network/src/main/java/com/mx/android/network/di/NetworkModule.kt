@@ -1,6 +1,5 @@
 package com.mx.android.network.di
 
-import android.content.Context
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.mx.android.common.constants.Generals
 import com.mx.android.network.BuildConfig
@@ -9,7 +8,6 @@ import com.mx.android.network.interceptors.AuthorizationInterceptor
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -30,7 +28,6 @@ class NetworkModule {
     @Provides
     @Singleton
     fun networkServiceProvider(
-        @ApplicationContext context: Context,
         @Named(CLIENT_HTTP_EATER) okHttpClient: OkHttpClient
     ): HeroAppService =
         Retrofit.Builder()

@@ -66,8 +66,8 @@ dependencies {
     //Retrofit
     implementation(Dependencies.ExternalLibs.Retrofit.core)
     implementation(Dependencies.ExternalLibs.Retrofit.converter)
-    implementation(Dependencies.ExternalLibs.Retrofit.interceptor)
     implementation(Dependencies.ExternalLibs.Retrofit.adapter)
+    implementation(Dependencies.ExternalLibs.Retrofit.interceptor)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")

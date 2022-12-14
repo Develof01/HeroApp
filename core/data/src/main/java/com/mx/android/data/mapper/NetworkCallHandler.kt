@@ -1,4 +1,4 @@
-package com.mx.android.common.extensionFunctions
+package com.mx.android.common.utils
 
 import com.mx.android.domain.dto.response.NetworkResult
 import kotlinx.coroutines.Dispatchers
@@ -8,26 +8,21 @@ import kotlinx.coroutines.flow.flowOn
 import retrofit2.HttpException
 import retrofit2.Response
 
-suspend fun <T> toResultFlow(invoke: suspend () -> Response<T>?): Flow<NetworkResult<T>> {
+suspend fun <T> callNewRequest(invoke: suspend () -> Response<T>?): Flow<NetworkResult<T>> {
     return flow {
-        emit(NetworkResult.Loading(isLoading = true))
         try {
             val response = invoke()
             response?.let {
-                emit(NetworkResult.Loading(isLoading = false))
                 if (response.isSuccessful) {
-                    val body = response.body()
-                    body?.let {
-                        emit(NetworkResult.Success(body))
+                    response.body()?.let {
+                        emit(NetworkResult.Success(it))
                     } ?: kotlin.run {
                         val errorMsg = response.errorBody()?.string()
-                        response.errorBody()?.close()
                         emit(NetworkResult.Error(exception = errorMsg ?: ""))
                     }
                 }
             }
         } catch (throwable: Throwable) {
-            emit(NetworkResult.Loading(isLoading = false))
             if (throwable is HttpException) {
                 emit(NetworkResult.Error(
                     code =  throwable.code(),

@@ -51,6 +51,11 @@ dependencies {
     implementation(Dependencies.JetPack.Hilt.hilt)
     kapt(Dependencies.JetPack.Hilt.hilt_compiler)
 
+    //Retrofit
+    implementation(Dependencies.ExternalLibs.Retrofit.core)
+    implementation(Dependencies.ExternalLibs.Retrofit.converter)
+    implementation(Dependencies.ExternalLibs.Retrofit.adapter)
+
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.0")

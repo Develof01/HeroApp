@@ -102,6 +102,12 @@ dependencies {
     //Hilt
     implementation Dependencies.JetPack.Hilt.hilt
     kapt Dependencies.JetPack.Hilt.hilt_compiler
+
+
+    //Retrofit
+    implementation(Dependencies.ExternalLibs.Retrofit.core)
+    implementation(Dependencies.ExternalLibs.Retrofit.converter)
+    implementation(Dependencies.ExternalLibs.Retrofit.adapter)
 }
 
 // Allow references to generated code
