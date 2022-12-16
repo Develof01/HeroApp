@@ -12,6 +12,7 @@ object Versions {
         const val compose_boom = "2022.12.00"
         const val compose_activity = "1.6.1"
         const val compose_lifecycle = "2.5.1"
+        const val compose_livedata = "1.3.2"
         const val compose = "1.3.1"
         const val compose_tooling = "1.3.2"
         const val appcompat = "1.5.1"

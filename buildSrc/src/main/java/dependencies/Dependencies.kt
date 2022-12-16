@@ -22,6 +22,7 @@ object Dependencies {
             const val material_icons = "androidx.compose.material:material-icons-extended:${Versions.JetPack.compose}"
             const val compose_activity = "androidx.activity:activity-compose:${Versions.JetPack.compose_activity}"
             const val lifecycle = "androidx.lifecycle:lifecycle-viewmodel-compose:${Versions.JetPack.compose_lifecycle}"
+            const val livedata = "androidx.compose.runtime:runtime-livedata:${Versions.JetPack.compose_livedata}"
             const val constraint = "androidx.constraintlayout:constraintlayout-compose:${Versions.JetPack.constraint_layout}"
             const val preview = "androidx.compose.ui:ui-tooling-preview:${Versions.JetPack.compose_tooling}"
             const val preview_debug = "androidx.compose.ui:ui-tooling:${Versions.JetPack.compose_tooling}"
@@ -46,8 +47,7 @@ object Dependencies {
         }
 
         object Navigation {
-            const val fragment_ktx = "androidx.navigation:navigation-fragment-ktx:${Versions.JetPack.nav}"
-            const val ui_ktx = "androidx.navigation:navigation-ui-ktx:${Versions.JetPack.nav}"
+            const val nav_compose = "androidx.navigation:navigation-compose:${Versions.JetPack.nav}"
         }
 
         object Hilt {

@@ -67,6 +67,7 @@ dependencies {
     implementation(Dependencies.JetPack.Compose.material_icons)
     implementation(Dependencies.JetPack.Compose.constraint)
     implementation(Dependencies.JetPack.Compose.lifecycle)
+    implementation(Dependencies.JetPack.Compose.livedata)
     implementation(Dependencies.JetPack.Compose.preview)
     debugImplementation(Dependencies.JetPack.Compose.preview_debug)
 
@@ -91,8 +92,7 @@ dependencies {
     kapt(Dependencies.JetPack.Hilt.hilt_compiler)
 
     //Navigation
-    implementation(Dependencies.JetPack.Navigation.fragment_ktx)
-    implementation(Dependencies.JetPack.Navigation.ui_ktx)
+    implementation(Dependencies.JetPack.Navigation.nav_compose)
 
     //Lottie
     implementation(Dependencies.ExternalLibs.Lottie.core)
