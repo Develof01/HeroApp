@@ -11,5 +11,6 @@ data class Hero(
     @ColumnInfo(name = "name") val firstName: String?,
     @ColumnInfo(name = "description") val description: String?,
     @ColumnInfo(name = "image_path") val imagePath: String?,
-    @ColumnInfo(name = "image_extension") val imageExtension: String?
+    @ColumnInfo(name = "image_extension") val imageExtension: String?,
+    @ColumnInfo(name = "isFavorite") val isFavorite: Boolean = false
 )

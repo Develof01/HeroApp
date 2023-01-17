@@ -1,0 +1,35 @@
+package com.mx.android.herocompose.di
+
+import com.mx.android.data.datasource.local.IHeroLocalDataSource
+import com.mx.android.data.datasource.network.IHeroDataSource
+import com.mx.android.data.repository.HeroRepositoryImpl
+import com.mx.android.database.dao.HeroDao
+import com.mx.android.datasource.HeroDataSourceImpl
+import com.mx.android.datasource.HeroLocalDataSourceImpl
+import com.mx.android.domain.repository.hero.IHeroRepository
+import com.mx.android.network.HeroAppService
+import dagger.Module
+import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
+
+@Module
+@InstallIn(ViewModelComponent::class)
+class HeroModule {
+
+    @Provides
+    fun bindHeroDataSource(apiService: HeroAppService): IHeroDataSource =
+        HeroDataSourceImpl(apiService)
+
+    @Provides
+    fun bindLocalHeroDataSource(heroDao: HeroDao): IHeroLocalDataSource =
+        HeroLocalDataSourceImpl(heroDao)
+
+    @Provides
+    fun bindHeroRepository(
+        networkIHeroDataSource: IHeroDataSource,
+        localIHeroDataSource: IHeroLocalDataSource
+    ): IHeroRepository =
+        HeroRepositoryImpl(networkIHeroDataSource, localIHeroDataSource)
+
+}

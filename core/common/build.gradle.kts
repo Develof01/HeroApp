@@ -3,6 +3,8 @@ import dependencies.Dependencies
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
+    id("dagger.hilt.android.plugin")
 }
 
 android {
@@ -44,6 +46,10 @@ dependencies {
 
     //Lifecycle
     implementation(Dependencies.JetPack.LifeCycle.lifecycle_vm)
+
+    //Hilt
+    implementation(Dependencies.JetPack.Hilt.hilt)
+    kapt(Dependencies.JetPack.Hilt.hilt_compiler)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")

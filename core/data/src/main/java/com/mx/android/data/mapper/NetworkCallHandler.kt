@@ -1,6 +1,6 @@
-package com.mx.android.common.utils
+package com.mx.android.data.mapper
 
-import com.mx.android.domain.dto.response.NetworkResult
+import com.mx.android.domain.modules.network.NetworkResult
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
@@ -24,7 +24,8 @@ suspend fun <T> callNewRequest(invoke: suspend () -> Response<T>?): Flow<Network
             }
         } catch (throwable: Throwable) {
             if (throwable is HttpException) {
-                emit(NetworkResult.Error(
+                emit(
+                    NetworkResult.Error(
                     code =  throwable.code(),
                     exception = throwable.message ?: throwable.cause.toString()))
             } else {

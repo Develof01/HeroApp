@@ -19,6 +19,7 @@ object Versions {
         const val material = "1.0.1"
         const val room = "2.4.3"
         const val nav = "2.5.3"
+        const val hilt_nav = "1.0.0"
         const val constraint_layout = "1.0.1"
         const val hilt = "2.44.2"
         const val lifecycle = "2.5.1"
@@ -30,6 +31,8 @@ object Versions {
         const val retrofit = "2.9.0"
         const val interceptor = "4.10.0"
         const val retrofit_coroutine_adapter = "0.9.2"
+        const val coil = "2.2.2"
+        const val glide = "1.0.0-alpha.1"
     }
 
 }

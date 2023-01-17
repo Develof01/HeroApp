@@ -1,8 +1,8 @@
 package com.mx.android.data.datasource.network
 
-import com.mx.android.domain.dto.response.NetworkResult
-import com.mx.android.domain.dto.response.BaseResponse
-import com.mx.android.domain.dto.response.hero.HeroResponse
+import com.mx.android.domain.modules.network.NetworkResult
+import com.mx.android.domain.modules.network.BaseResponse
+import com.mx.android.network.dto.response.hero.HeroResponse
 import kotlinx.coroutines.flow.Flow
 
 interface IHeroDataSource {

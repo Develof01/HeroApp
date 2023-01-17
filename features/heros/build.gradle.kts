@@ -75,7 +75,6 @@ dependencies {
     implementation(Dependencies.JetPack.LifeCycle.lifecycle_vm)
     implementation(Dependencies.JetPack.LifeCycle.lifecycle_livedata)
 
-
     //Retrofit
     implementation(Dependencies.ExternalLibs.Retrofit.core)
     implementation(Dependencies.ExternalLibs.Retrofit.converter)
@@ -93,9 +92,14 @@ dependencies {
 
     //Navigation
     implementation(Dependencies.JetPack.Navigation.nav_compose)
+    implementation(Dependencies.JetPack.Navigation.hilt_nav)
 
     //Lottie
     implementation(Dependencies.ExternalLibs.Lottie.core)
+
+    //Coil
+    implementation(Dependencies.ExternalLibs.Image.coil)
+    implementation(Dependencies.ExternalLibs.Image.glide)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")

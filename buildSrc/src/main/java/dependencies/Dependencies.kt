@@ -44,10 +44,12 @@ object Dependencies {
         object Room {
             const val room_runtime = "androidx.room:room-runtime:${Versions.JetPack.room}"
             const val room_compiler = "androidx.room:room-compiler:${Versions.JetPack.room}"
+            const val room_ktx = "androidx.room:room-ktx:${Versions.JetPack.room}"
         }
 
         object Navigation {
             const val nav_compose = "androidx.navigation:navigation-compose:${Versions.JetPack.nav}"
+            const val hilt_nav = "androidx.hilt:hilt-navigation-compose:${Versions.JetPack.hilt_nav}"
         }
 
         object Hilt {
@@ -66,6 +68,10 @@ object Dependencies {
 
         object Lottie {
             const val core = "com.airbnb.android:lottie:${Versions.ExternalLibs.lottie}"
+        }
+        object Image {
+            const val coil = "io.coil-kt:coil-compose:${Versions.ExternalLibs.coil}"
+            const val glide = "com.github.bumptech.glide:compose:${Versions.ExternalLibs.glide}"
         }
     }
 }

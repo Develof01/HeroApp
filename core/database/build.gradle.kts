@@ -50,6 +50,7 @@ dependencies {
 
     //Room
     implementation(Dependencies.JetPack.Room.room_runtime)
+    implementation(Dependencies.JetPack.Room.room_ktx)
     annotationProcessor(Dependencies.JetPack.Room.room_compiler)
     kapt(Dependencies.JetPack.Room.room_compiler)
 
