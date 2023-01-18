@@ -10,7 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
-import com.mx.android.common.base.ShareViewModel
+import com.mx.android.dashboard.viewModel.DashboardViewModel
 import com.mx.android.dashboard.screen.DashboardScreen
 import com.mx.android.ui.theme.HeroComposeTheme
 import dagger.hilt.android.AndroidEntryPoint
@@ -18,16 +18,11 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
 
-    private  val viewModel: ShareViewModel by viewModels()
+    private  val viewModel: DashboardViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        val darkMode = applicationContext.resources.configuration.uiMode
-        val bundle = Bundle()
-        bundle.putInt("darkMode",  darkMode)
-
-        viewModel.setUp(bundle)
+        viewModel.setUp()
 
         setContent {
             val darkTheme by viewModel.isDarkTheme.collectAsState()

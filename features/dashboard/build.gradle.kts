@@ -53,6 +53,8 @@ dependencies {
     implementation(project (":core:ui"))
     implementation(project (":core:common"))
     implementation(project(":features:heros"))
+    implementation(project(":core:data"))
+    implementation(project(":core:domain"))
 
     // Kotlin
     implementation(Dependencies.Kotlin.Androidx.core)
@@ -84,6 +86,9 @@ dependencies {
 
     //Lottie
     implementation(Dependencies.ExternalLibs.Lottie.core)
+
+    //Datastore
+    implementation(Dependencies.JetPack.DataStore.datastore)
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.4")

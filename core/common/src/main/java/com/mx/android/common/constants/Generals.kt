@@ -2,7 +2,7 @@ package com.mx.android.common.constants
 
 object Generals {
 
-    const val App_NAME ="UmvelApp"
+    const val App_NAME ="HeroComposeApp"
 
     object RoomConstants {
         const val DB_VERSION = (1.0).toInt()

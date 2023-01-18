@@ -15,7 +15,7 @@ import androidx.navigation.NavGraph.Companion.findStartDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.mx.android.common.base.ShareViewModel
+import com.mx.android.dashboard.viewModel.DashboardViewModel
 import com.mx.android.dashboard.navigation.BottomNavRoute
 import com.mx.android.dashboard.navigation.InitNavGraph
 import com.mx.android.ui.components.topAppBars.TopBarItem
@@ -23,7 +23,7 @@ import com.mx.android.ui.components.topAppBars.TopBarItem
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DashboardScreen() {
-    val shareViewModel = hiltViewModel<ShareViewModel>()
+    val shareViewModel = hiltViewModel<DashboardViewModel>()
     val navController = rememberNavController()
     Scaffold(
         topBar = {
@@ -40,7 +40,7 @@ fun DashboardScreen() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun TopBar(shareViewModel: ShareViewModel) {
+fun TopBar(shareViewModel: DashboardViewModel) {
     var showMenu by remember { mutableStateOf(false) }
     TopAppBar(
         title = {

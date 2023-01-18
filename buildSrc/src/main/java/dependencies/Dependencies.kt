@@ -56,6 +56,10 @@ object Dependencies {
             const val hilt = "com.google.dagger:hilt-android:${Versions.JetPack.hilt}"
             const val hilt_compiler = "com.google.dagger:hilt-compiler:${Versions.JetPack.hilt}"
         }
+
+        object DataStore {
+            const val datastore = "androidx.datastore:datastore-preferences:${Versions.JetPack.datastore}"
+        }
     }
 
     object ExternalLibs {

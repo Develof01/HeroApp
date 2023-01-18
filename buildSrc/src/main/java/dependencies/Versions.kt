@@ -24,6 +24,7 @@ object Versions {
         const val hilt = "2.44.2"
         const val lifecycle = "2.5.1"
         const val paging = "1.0.0-alpha17"
+        const val datastore = "1.0.0"
     }
 
     object ExternalLibs {
